@@ -25,6 +25,7 @@ class GamesController < ApplicationController
 
 
   def show
+    @add_ons = @game.add_ons
   end
 
 

@@ -1,2 +1,19 @@
 <h1><%= @game.name %></h1>
 <%= link_to("Edit", [:edit, @game]) %>
+
+<h2>Add Ons</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @add_ons.each do |add_on| %>
+      <tr>
+        <td><%= link_to(add_on.title, [@game, add_on]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to("New AddOn", [:new, @game, :add_on]) %>
