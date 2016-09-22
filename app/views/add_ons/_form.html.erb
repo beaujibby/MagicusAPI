@@ -1,32 +1,6 @@
-<%= form_for([@game, add_on]) do |f| %>
-  <% if add_on.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(add_on.errors.count, "error") %> prohibited this add_on from being saved:</h2>
-
-      <ul>
-      <% add_on.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cost %>
-    <%= f.number_field :cost %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for([@game, add_on]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :cost %>
+  <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
 <% end %>

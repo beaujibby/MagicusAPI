@@ -1,17 +1,21 @@
-<h1>Games</h1>
-<%= link_to "New Game", new_game_path %>
+<div class="page-header">
+  <div class="pull-xs-right">
+    <%= link_to "New Game", new_game_path, class: "btn btn-secondary" %>
+  </div>
+  <h1>Games</h1>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to(game.name, game) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @games.each do |game| %>
+    <div class="col-xs-6 col-md-3">
+      <div class="card">
+        <div class="card-block">
+          <div class="caption">
+            <%= link_to(game.name, game) %><br />
+            <span class="text-muted"><%= pluralize(game.add_ons.count, "Add On") %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

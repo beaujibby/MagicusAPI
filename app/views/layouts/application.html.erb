@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Magicus</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Magicus</title>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<nav class="navbar navbar-light bg-faded navbar-fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+      &#9776;
+    </button>
+    <a class="navbar-brand" href="/admin">Magicus</a>
 
-  <body>
-    <%= yield %>
-  </body>
+    <div class="collapse navbar-collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+      <ul class="nav navbar-nav">
+        <li class="nav-item <%= "active" if params[:controller] == "games" %>"><%= link_to("Games", :games, class: "nav-link") %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>
