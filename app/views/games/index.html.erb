@@ -1,0 +1,17 @@
+<h1>Games</h1>
+<%= link_to "New Game", new_game_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to(game.name, game) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
