@@ -43,7 +43,7 @@ class AddOnsController < ApplicationController
   def update
     respond_to do |format|
       if @add_on.update(add_on_params)
-        format.html { redirect_to @add_on, notice: 'Add on was successfully updated.' }
+        format.html { redirect_to [@game, @add_on], notice: 'Add on was successfully updated.' }
         format.json { render :show, status: :ok, location: @add_on }
       else
         format.html { render :edit }
