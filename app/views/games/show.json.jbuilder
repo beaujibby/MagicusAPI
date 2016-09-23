@@ -6,7 +6,8 @@ Jbuilder.encode do
     json.array!(@game.add_ons) do |add_on|
       json.id add_on.id
       json.title add_on.title
+      json.cost "$#{add_on.cost}"
     end
   end
-  
+
 end
