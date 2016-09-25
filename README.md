@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+rails generate controller [name] new
+git add -p
+git commit --amend
+heroku --app magicus rake db:migrate
+/usr/local/var/postgres/ no postmaster.pid

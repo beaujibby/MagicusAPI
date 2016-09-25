@@ -1,0 +1,12 @@
+<div class="page-header">
+  <%= link_to("Edit", [:edit, @user], class: "btn btn-secondary pull-xs-right") %>
+  <h1><%= @user.username %></h1>
+</div>
+
+<section>
+  <h2>Info</h2>
+  <div class="row">
+    <%= @user.password %>
+    <%= @user.email %>
+  </div>
+</section>
