@@ -19,6 +19,10 @@ class UsersController < ApplicationController
   end
 
 
+  def login
+    @user = User.find(params[:username,:password])
+  end
+
   def new
     @user = User.new
   end
